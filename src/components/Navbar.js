@@ -7,6 +7,8 @@ import {
   faYoutube,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-scroll';
+import './navbar.css';
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -46,55 +48,64 @@ const Navbar = () => {
             </div>
             <div className="hidden sm:flex justify-between w-full">
               <div className="navbar-nav flex items-center w-full text-xs md:text-sm">
-                <a
-                  href="#"
-                  className="p-2 mx-1 cursor-pointer"
+                <Link
+                  className="p-2 mx-1 cursor-pointer nav-link"
                   aria-current="page"
-                  data-scroll="#home"
+                  smooth={true}
+                  to="home"
                 >
                   Home
-                </a>
+                </Link>
 
-                <a
-                  href="#"
-                  className="p-2 mx-1 cursor-pointer"
-                  data-scroll="#about"
+                <Link
+                  className="p-2 mx-1 cursor-pointer nav-link"
+                  smooth={true}
+                  to="about"
                 >
                   About
-                </a>
-                <a
-                  href="#"
-                  className="p-2 mx-1 cursor-pointer"
-                  data-scroll="#shows"
+                </Link>
+                <Link
+                  className="p-2 mx-1 cursor-pointer nav-link"
+                  smooth={true}
+                  to="shows"
                 >
                   Shows
-                </a>
-                <a
-                  href="#"
-                  className="p-2 mx-1 cursor-pointer"
-                  data-scroll="#media"
+                </Link>
+                <Link
+                  className="p-2 mx-1 cursor-pointer nav-link"
+                  smooth={true}
+                  to="media"
                 >
                   Media
-                </a>
-                <a
-                  href="#"
-                  className="p-2 mx-1 cursor-pointer"
-                  data-scroll="#contact"
+                </Link>
+                <Link
+                  className="p-2 mx-1 cursor-pointer nav-link"
+                  smooth={true}
+                  to="contact"
                 >
                   Contact
-                </a>
+                </Link>
               </div>
               <div className="text-xl flex items-center md:p-8">
-                <a href="#" href="#">
+                <a
+                  href="https://www.instagram.com/stonewallhippie/"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faInstagram} className="mx-2" />
                 </a>
-                <a href="#" href="#">
+                <a
+                  href="https://www.facebook.com/StonewallHippie/"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faFacebook} className="mx-2" />
                 </a>
-                <a href="#" href="#">
+                <a href="https://twitter.com/StoneWallHippie" target="_blank">
                   <FontAwesomeIcon icon={faTwitter} className="mx-2" />
                 </a>
-                <a href="#" href="#">
+                <a
+                  href="https://www.youtube.com/c/TheRealSalMusic"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faYoutube} className="mx-2" />
                 </a>
               </div>
@@ -102,68 +113,80 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div id="overlayNav" className={active ? '' : 'hidden'}>
-        <a href="#" onClick={toggleHamburger}>
-          &times;
-        </a>
+      <div
+        id="overlayNav"
+        className={`overlay z-50 ${active ? 'w-0' : 'w-full'}`}
+      >
+        <a onClick={toggleHamburger}>&times;</a>
 
         <div className="overlay-content">
           <div>
-            <a
-              href="#"
-              className="nav-link cursor-pointer"
+            <Link
+              className="p-2 mx-1 cursor-pointer nav-link"
               aria-current="page"
+              smooth={true}
               onClick={toggleHamburger}
-              data-scroll="#home"
+              to="home"
             >
               Home
-            </a>
-            <a
-              href="#"
-              className="nav-link cursor-pointer"
+            </Link>
+
+            <Link
+              className="p-2 mx-1 cursor-pointer nav-link"
+              smooth={true}
               onClick={toggleHamburger}
-              data-scroll="#about"
+              to="about"
             >
               About
-            </a>
-            <a
-              href="#"
-              className="nav-link cursor-pointer"
+            </Link>
+            <Link
+              className="p-2 mx-1 cursor-pointer nav-link"
+              smooth={true}
               onClick={toggleHamburger}
-              data-scroll="#shows"
+              to="shows"
             >
               Shows
-            </a>
-            <a
-              href="#"
-              className="nav-link cursor-pointer"
+            </Link>
+            <Link
+              className="p-2 mx-1 cursor-pointer nav-link"
+              smooth={true}
               onClick={toggleHamburger}
-              data-scroll="#media"
+              to="media"
             >
               Media
-            </a>
-            <a
-              href="#"
-              className="nav-link cursor-pointer"
+            </Link>
+            <Link
+              className="p-2 mx-1 cursor-pointer nav-link"
+              smooth={true}
               onClick={toggleHamburger}
-              data-scroll="#contact"
+              to="contact"
             >
               Contact
-            </a>
-          </div>
-          <div className="text-xl flex items-center md:p-8">
-            <a href="#" href="#">
-              <FontAwesomeIcon icon={faInstagram} className="mx-2" />
-            </a>
-            <a href="#" href="#">
-              <FontAwesomeIcon icon={faFacebook} className="mx-2" />
-            </a>
-            <a href="#" href="#">
-              <FontAwesomeIcon icon={faTwitter} className="mx-2" />
-            </a>
-            <a href="#" href="#">
-              <FontAwesomeIcon icon={faYoutube} className="mx-2" />
-            </a>
+            </Link>
+
+            <div className="text-xl flex items-center justify-center w-full p-8">
+              <a
+                href="https://www.instagram.com/stonewallhippie/"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faInstagram} className="mx-2" />
+              </a>
+              <a
+                href="https://www.facebook.com/StonewallHippie/"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faFacebook} className="mx-2" />
+              </a>
+              <a href="https://twitter.com/StoneWallHippie" target="_blank">
+                <FontAwesomeIcon icon={faTwitter} className="mx-2" />
+              </a>
+              <a
+                href="https://www.youtube.com/c/TheRealSalMusic"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faYoutube} className="mx-2" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

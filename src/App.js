@@ -1,6 +1,7 @@
 import './components/all.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import wideLogo from './img/wide_logo.png';
+import fullBand from './img/fullband.jpg';
 import BandsintownWidget from './components/BandsintownWidget';
 import SpotifyPlayer from './components/SpotifyPlayer';
 
@@ -29,6 +30,10 @@ function App() {
 
   const images = importAll(
     require.context('./img/slider', false, /\.(png|jpe?g|svg)$/),
+  );
+
+  const aboutImages = importAll(
+    require.context('./img/aboutslider', false, /\.(png|jpe?g|svg)$/),
   );
 
   const bandsintownWidgetConfig = {
@@ -110,7 +115,7 @@ function App() {
                       <SwiperSlide>
                         <img
                           src={image}
-                          className="relative px-4 object-contain w-full hover:transition-transform hover:scale-[1.07] duration-700 hover:border-x-8 border-x-black"
+                          className="relative px-4 object-contain w-full hover:transition-transform hover:scale-[1.07] duration-700 hover:border-x-8 border-x-black my-auto"
                         />
                       </SwiperSlide>
                     );
@@ -124,6 +129,31 @@ function App() {
                     About
                   </h1>
                   <div>
+                    <div>
+                      <Swiper
+                        pagination={{
+                          dynamicBullets: true,
+                        }}
+                        autoplay={{
+                          delay: 5000,
+                          pauseOnMouseEnter: true,
+                          disableOnInteraction: false,
+                        }}
+                        loop={true}
+                      >
+                        {aboutImages &&
+                          aboutImages.map((image) => {
+                            return (
+                              <SwiperSlide>
+                                <img
+                                  src={image}
+                                  className="relative px-4 object-cover w-full border-x-black"
+                                />
+                              </SwiperSlide>
+                            );
+                          })}
+                      </Swiper>
+                    </div>
                     <p className="text-white p-2 text-left">
                       With deep roots styled and sharpened in the hallows of the
                       West Texas haunt of The Blue Light, Sal and the Stonewall
@@ -136,16 +166,19 @@ function App() {
                       growth always shine brightly with each note of progress
                       and reflection.
                     </p>
-                    <p className="text-white p-2 text-left">
-                      The most appealing aspect of Sal and the Stonewall Hippies
-                      are their ability to convey their message to everyone.  A
-                      product of blended life experienced well lived, their
-                      music is honest and likely to be a gut punch for anyone
-                      who has struggled along the journey of life.  Once
-                      described as versatile blues, no genre can capture the
-                      true nature of the sound being created by Sal and the
-                      Stonewall Hippies.
-                    </p>
+                    <div className="md:grid md:grid-cols-2 md:place-items-center my-2">
+                      <img src={fullBand} className="w-full" />
+                      <p className="text-white p-2 pl-12 text-left">
+                        The most appealing aspect of Sal and the Stonewall
+                        Hippies are their ability to convey their message to
+                        everyone.  A product of blended life experienced well
+                        lived, their music is honest and likely to be a gut
+                        punch for anyone who has struggled along the journey of
+                        life.  Once described as versatile blues, no genre can
+                        capture the true nature of the sound being created by
+                        Sal and the Stonewall Hippies.
+                      </p>
+                    </div>
                     <p className="text-white p-2 text-left">
                       Taking heavy influence from classic blues sprinkled with
                       acoustic storylines of reality, Sal and the Stonewall

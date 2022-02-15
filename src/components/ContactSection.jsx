@@ -32,7 +32,7 @@ export default function ContactSection() {
                         htmlFor="email"
                         className="block text-sm font-medium text-white"
                       >
-                        Email address
+                        Email Address
                       </label>
                       <input
                         type="text"
