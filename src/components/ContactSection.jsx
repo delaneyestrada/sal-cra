@@ -6,7 +6,7 @@ export default function ContactSection() {
       <div className="mt-10 sm:mt-0">
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="mt-5 md:mt-0 col-span-6">
-            <form action="#" method="POST" data-netlify="true">
+            <form action="#" method="POST" data-netlify="true" netlify>
               <input type="hidden" name="form-name" value="contact" />
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-transparent sm:p-6">
