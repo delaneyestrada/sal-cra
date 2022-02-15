@@ -85,7 +85,7 @@ function App() {
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content="SAL & The Stonewall Hippies" />
         <meta property="og:url" content="/" />
-        <meta property="og:image" content={`img/dylan-landscape.jpg`} />
+        <meta property="og:image" content={`img/fullband.jpg`} />
         <link rel="stylesheet" href="https://use.typekit.net/dwy0vuj.css" />
       </Helmet>
       <div className="hidden sm:block">
