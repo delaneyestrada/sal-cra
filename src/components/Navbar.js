@@ -117,7 +117,9 @@ const Navbar = () => {
         id="overlayNav"
         className={`overlay z-50 ${active ? 'w-full' : 'w-0'}`}
       >
-        <a onClick={toggleHamburger}>&times;</a>
+        <a onClick={toggleHamburger} className="cursor-pointer">
+          &times;
+        </a>
 
         <div className="overlay-content">
           <div>
